@@ -35,9 +35,9 @@ struct node *remove_node(struct node *front, int id) {
     
     if (front) {
         if (front->id == id) {
-            struct node *temp = front;
+            struct node *temp = front->next;
             free(front);
-            return temp->next;
+            return temp;
         }
         front->next = remove_node(front->next, id);
     }
